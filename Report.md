@@ -58,18 +58,24 @@ A simple fully-connected feed-forward network — sufficient because the 37-dim 
 
 ## Results
 
-<!-- ───────────────────────────────────────────────────────────────────────
-     FILL THIS IN AFTER TRAINING IN THE UDACITY WORKSPACE.
-     The training loop in Navigation.ipynb prints the solve episode and saves
-     the plot to assets/scores.png. Replace the two placeholders below with the
-     real numbers/plot from your run, then commit checkpoint.pth + assets/scores.png.
-     ─────────────────────────────────────────────────────────────────────── -->
+The agent was trained in the Udacity GPU Workspace and **solved the environment in 418 episodes** — the average score over the 100-episode window ending at episode 518 first reached `+13` (final 100-episode average: **13.02**). The trained weights are saved in `checkpoint.pth`.
 
-The environment was solved in **`<N>` episodes** (i.e. the average score over episodes `<N>`–`<N+100>` first reached `+13`). The trained weights are saved in `checkpoint.pth`.
+Progress during training (100-episode moving average):
+
+| Episode | Avg score |
+|:-------:|:---------:|
+| 100 | 0.52 |
+| 200 | 3.45 |
+| 300 | 6.57 |
+| 400 | 10.04 |
+| 500 | 12.35 |
+| 518 | **13.02** ✅ solved |
 
 Plot of score per episode (the dashed line marks the `+13` solved threshold):
 
 ![Scores](assets/scores.png)
+
+The curve shows the expected DQN learning dynamics: scores start near zero (and occasionally negative) while the agent explores randomly, then climb steadily as the replay buffer fills and the Q-network learns to distinguish yellow from blue bananas, finally fluctuating around 13–17 once a competent policy is found.
 
 > **Note (validation of the implementation):** the identical `Agent`/`QNetwork` code in this repo was verified end-to-end on OpenAI Gym's **LunarLander** (the same DQN exercise from the Deep Q-Networks lesson), where it solved the task in **678 episodes** and scored a mean of **225** over 10 greedy evaluation episodes. Only `state_size` (8→37) and `action_size` (both 4) differ for the Banana task.
 
