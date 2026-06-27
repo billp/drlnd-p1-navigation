@@ -1,0 +1,7 @@
+# Legacy Udacity DRLND (Value-based-methods) stack — Python 3.6.
+# In the Udacity Workspace these are already installed.
+torch==0.4.0
+numpy>=1.11.0
+matplotlib
+unityagents==0.4.0
+mlagents==0.4.0

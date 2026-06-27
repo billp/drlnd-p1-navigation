@@ -1,0 +1,21 @@
+# Unity environment builds (downloaded separately — do not commit)
+Banana.app/
+Banana_Linux/
+Banana_Linux_NoVis/
+Banana_Windows_x86/
+Banana_Windows_x86_64/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.python-version
+
+# OS
+.DS_Store
+
+# venvs
+.venv/
+env/
+venv/
